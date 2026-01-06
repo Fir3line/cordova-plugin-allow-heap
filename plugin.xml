@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:amazon="http://schemas.android.com/apk/lib/com.amazon.device.ads" xmlns:rim="http://www.blackberry.com/ns/widgets" id="cordova-plugin-allow-backup" version="0.0.2">
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-allow-heap"
+        version="1.0.0">
+
   <name>cordova-plugin-allow-heap</name>
+
   <description>
-		To enable you to set the allow larger heaproperty of a cordova-android application.
-	</description>
+    Forces android:largeHeap="true" on the application element of AndroidManifest.xml.
+  </description>
+
   <license>MIT</license>
+
   <engines>
     <engine name="cordova" version=">=6.4.0"/>
     <engine name="cordova-android" version=">=6.0.0"/>
   </engines>
-  <preference name="BACKUP" default="false"/>
+
   <platform name="android">
     <edit-config file="AndroidManifest.xml" target="/manifest" mode="merge">
       <manifest xmlns:tools="http://schemas.android.com/tools"/>
     </edit-config>
+
     <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
       <application android:largeHeap="true" tools:replace="android:largeHeap"/>
     </edit-config>
   </platform>
+
 </plugin>
